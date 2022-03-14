@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/detailImage"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:scaleType="centerCrop"
+               />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/Theme.AppCompat.Light"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_back">
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+            <TextView
+                android:id="@+id/tvTitel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PBS NewsHour (1975)"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/movieDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                   >
+                    <TextView
+                        android:id="@+id/movieBudjet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Budget : "
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+                    <TextView
+                        android:id="@+id/movieBudjetPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:layout_marginStart="12dp"
+                       app:layout_constraintTop_toTopOf="@id/movieBudjet"
+                        app:layout_constraintLeft_toRightOf="@id/movieBudjet"/>
+                    <TextView
+                        android:id="@+id/moviDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Movie duration"
+                        android:textSize="18sp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/movieBudjet"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                       />
+                    <TextView
+                        android:id="@+id/moviDurationTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintLeft_toRightOf="@id/moviDuration"
+                        app:layout_constraintTop_toTopOf="@id/moviDuration"
+                        />
+                    <TextView
+                        android:id="@+id/moviLanguage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Language"
+                        android:textSize="18sp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/moviDuration"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintLeft_toRightOf="@id/moviLanguage"
+                        app:layout_constraintTop_toTopOf="@id/moviLanguage"
+                        />
+                    <TextView
+                        android:id="@+id/release"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Release date"
+                        android:textSize="18sp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/moviLanguage"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/releaseData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintLeft_toRightOf="@id/release"
+                        app:layout_constraintTop_toTopOf="@id/release"
+                        />
+                    <TextView
+                        android:id="@+id/vote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vote count"
+                        android:textSize="18sp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/release"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/voteCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150000"
+                        android:textSize="18sp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintLeft_toRightOf="@id/vote"
+                        app:layout_constraintTop_toTopOf="@id/vote"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+               android:layout_marginTop="16dp"
+                app:cardElevation="4dp">
+
+            <TextView
+                android:id="@+id/owerview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:lines="5"
+                android:layout_margin="12dp"
+                android:text="ebfljehbfljehbfljehbfejlrbqljhbeljfhbreljhbfejfbhlejhbfjefbejqfeqjfbeljqhbfljhbf reqhjbejhbf ejhfb ejhbfejhfb ejhfb ejhbfjhbehqbf lqjhbfqjhb elqjfhbeqjfhbfjbfejqhbfjhbfejqb"
+               />
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/actorRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+    <ProgressBar
+        android:id="@+id/detailProgres"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

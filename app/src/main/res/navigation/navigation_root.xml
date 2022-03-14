@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_root"
+    app:startDestination="@id/movieFragment">
+
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.express24_task.ui.movie.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.express24_task.ui.moviedetail.MovieDetailFragment"
+        android:label="MovieDetailFragment" >
+        <action
+            android:id="@+id/action_movieDetailFragment_to_actorDetailFragment"
+            app:destination="@id/actorDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actorDetailFragment"
+        android:name="com.example.express24_task.ui.actordetail.ActorDetailFragment"
+        android:label="ActorDetailFragment" />
+</navigation>
